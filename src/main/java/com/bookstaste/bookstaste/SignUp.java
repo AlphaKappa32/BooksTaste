@@ -5,8 +5,8 @@ import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
-@WebServlet(name = "Login", value = "/Login")
-public class Login extends HttpServlet {
+@WebServlet(name = "SignUp", value = "/SignUp")
+public class SignUp extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -22,6 +22,9 @@ public class Login extends HttpServlet {
         session.setAttribute("username", username);
         session.setAttribute("password", password);
 
-        //request.getRequestDispatcher("")
+        request.getRequestDispatcher("user-data.jsp").forward(request, response);
+
+
+
     }
 }
